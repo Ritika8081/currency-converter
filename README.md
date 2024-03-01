@@ -1,0 +1,2 @@
+# currency-converter
+npm package
