@@ -1,5 +1,6 @@
 
-##FreeCurrencyApi
+#FreeCurrencyApi
+
 The FreeCurrencyApi npm package allows you to easily interact with the FreeCurrencyApi service to convert currencies and retrieve exchange rates.
 
 Installation
