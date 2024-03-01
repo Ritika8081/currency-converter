@@ -1,9 +1,9 @@
 {
-  "name": "cs-currency-converter",
+  "name": "any-currency-converter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Ritika8081/currency-converter#readme",
   "dependencies": {
-    "@everapi/freecurrencyapi-js": "^1.0.1"
+    "@everapi/freecurrencyapi-js": "^1.0.1",
+    "axios": "^1.6.7"
   }
 }
