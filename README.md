@@ -12,23 +12,30 @@ To use the FreeCurrencyApi class in your code, follow these steps:
 
 ## Import the required modules:
 
-``` import axios from 'axios'; ```
-``` import { FreeCurrencyApi } from 'freecurrencyapi'; ```
+```
+import axios from 'axios';
+import { FreeCurrencyApi } from 'freecurrencyapi';
+
+```
 
 Create an instance of the FreeCurrencyApi class with your API key:
 
-``` const apiKey = 'YOUR_API_KEY_HERE';
+```
+const apiKey = 'YOUR_API_KEY_HERE'; 
 const currencyApi = new FreeCurrencyApi(apiKey);
-Replace 'YOUR_API_KEY_HERE' with your actual API key. ```
+```
+Replace 'YOUR_API_KEY_HERE' with your actual API key. 
 
 Now you can use the convertCurrency and getExchangeRate methods to perform currency conversion and retrieve exchange rates:
 
-``` // Convert currency
+```
+// Convert currency
 const amount = 100;
 const fromCurrency = 'USD';
 const toCurrency = 'EUR';
 const result = await currencyApi.convertCurrency(fromCurrency, toCurrency, amount);
-console.log(`${amount} ${fromCurrency} equals ${result} ${toCurrency}`); ```
+console.log(`${amount} ${fromCurrency} equals ${result} ${toCurrency}`);
+```
 
 // Get exchange rate
 const exchangeRate = await currencyApi.getExchangeRate(fromCurrency, toCurrency);
@@ -53,7 +60,8 @@ Returns a Promise that resolves to the exchange rate.
 
 Example
 
-``` import axios from 'axios';
+```
+ import axios from 'axios';
 import { FreeCurrencyApi } from 'freecurrencyapi';
 
 const apiKey = 'YOUR_API_KEY_HERE';
@@ -69,7 +77,8 @@ console.log(`${amount} ${fromCurrency} equals ${result} ${toCurrency}`);
 
 // Get exchange rate
 const exchangeRate = await currencyApi.getExchangeRate(fromCurrency, toCurrency);
-console.log(`1 ${fromCurrency} equals ${exchangeRate} ${toCurrency}`);  ```
+console.log(`1 ${fromCurrency} equals ${exchangeRate} ${toCurrency}`);  
+```
 Note
 Make sure to replace 'YOUR_API_KEY_HERE' with your actual FreeCurrencyApi API key.
 
