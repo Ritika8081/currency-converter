@@ -1,16 +1,16 @@
-  # Advance-Currency-converter 
+  # Advance-Currency-Master 
 
 follow these steps:
 
 Install the Package: Use npm to install the package in your project directory. Run the following command in your terminal:
 
  ``` bash
-npm install advance-currency-converter
+npm i advance-currency-master
 ```
 Import the Package: In your JavaScript file where you want to use the currency conversion functionality, import the package:
 
 ```
-import { FreeCurrencyApi } from 'advance-currency-converter';
+import { FreeCurrencyApi } from 'advance-currency-master';
 ```
 Create an Instance: Create an instance of the FreeCurrencyApi class by passing your API key as an argument to the constructor:
 
