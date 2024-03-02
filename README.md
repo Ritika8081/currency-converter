@@ -17,7 +17,6 @@ Installation
 To get started with advance-currency-converter today, simply install it via npm:
 
  ``` bash
-Copy code
 npm install advance-currency-converter
 ```
 Then, head over to the README for comprehensive documentation on how to leverage the functionalities offered by this package.
