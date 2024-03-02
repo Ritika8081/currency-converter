@@ -1,46 +1,43 @@
- # Advance-Currency-Converter NPM Package
-🚀 Exciting News!
+  # Advance-Currency-converter 
 
-Attention developers! I'm thrilled to announce the release of a brand new npm package that will revolutionize your currency conversion tasks. Introducing Advance-Currency-Converter, created by yours truly, Ritika Mishra!
+follow these steps:
 
-This npm package comes packed with powerful features to simplify your currency-related operations:
-
-Built-in HTTP Requests: Utilizing axios, this package ensures seamless communication with currency API endpoints, making data retrieval a breeze.
-
-Robust Error Handling: Say goodbye to unexpected errors! We've implemented robust error handling mechanisms to ensure your applications run smoothly even in challenging scenarios.
-
-New Method: getExchangeRate: Need to fetch the exchange rate between two currencies? We've got you covered! Our latest update introduces a convenient method to retrieve exchange rates effortlessly.
-
-Improved Clarity: We've revamped the class name to FreeCurrencyApi for better clarity and ease of use. No more guessing games when integrating this package into your projects!
-
-Installation
-To get started with advance-currency-converter today, simply install it via npm:
+Install the Package: Use npm to install the package in your project directory. Run the following command in your terminal:
 
  ``` bash
 npm install advance-currency-converter
 ```
-Then, head over to the README for comprehensive documentation on how to leverage the functionalities offered by this package.
+Import the Package: In your JavaScript file where you want to use the currency conversion functionality, import the package:
 
-Usage
 ```
-const { FreeCurrencyApi } = require('advance-currency-converter');
-
-const currencyConverter = new FreeCurrencyApi();
-
-// Example usage to get exchange rate between USD and EUR
-currencyConverter.getExchangeRate('USD', 'EUR')
-  .then(rate => {
-    console.log(`1 USD is equal to ${rate} EUR`);
-  })
-  .catch(error => {
-    console.error('Error fetching exchange rate:', error);
-  });
+import { FreeCurrencyApi } from 'advance-currency-converter';
 ```
+Create an Instance: Create an instance of the FreeCurrencyApi class by passing your API key as an argument to the constructor:
 
-Whether you're developing financial apps, e-commerce platforms, or any other project that involves currency conversion, advance-currency-converter is your go-to solution.
+```
+const apiKey = 'YOUR_API_KEY_HERE'; // Replace 'YOUR_API_KEY_HERE' with your actual API key
+const currencyApi = new FreeCurrencyApi(apiKey);
+```
+Perform Currency Conversion: You can now use the convertCurrency method to convert currency. Provide the source currency, target currency, and the amount to be converted:
+ ```
+const fromCurrency = 'USD';
+const toCurrency = 'EUR';
+const amount = 100;
+const convertedAmount = await currencyApi.convertCurrency(fromCurrency, toCurrency, amount);
+console.log(`Converted amount: ${convertedAmount}`);
+```
+Fetch Exchange Rate: If you want to fetch the exchange rate between two currencies, use the getExchangeRate method:
+ ```
+const exchangeRate = await currencyApi.getExchangeRate(fromCurrency, toCurrency);
+console.log(`Exchange rate from ${fromCurrency} to ${toCurrency}: ${exchangeRate}`);
+```
+Error Handling: Ensure to handle errors appropriately, as methods like convertCurrency and getExchangeRate are asynchronous and may throw errors:
+ ```
+try {
+    // Perform currency conversion or fetch exchange rate
+} catch (error) {
+    console.error(`Error: ${error.message}`);
+}
 
-Feel free to contribute, report issues, or suggest improvements on the GitHub repository. Your feedback is invaluable in making this package even better!
-
-Happy coding! 💻💡
-
-Author: Ritika Mishra
+```
+That's it! You're now ready to use the advance-currency-converter package in your project to perform currency conversions and fetch exchange rates. Make sure to replace 'YOUR_API_KEY_HERE' with your actual API key.
