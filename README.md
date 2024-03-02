@@ -1,86 +1,47 @@
+ # Advance-Currency-Converter NPM Package
+🚀 Exciting News!
 
-# FreeCurrencyApi
+Attention developers! I'm thrilled to announce the release of a brand new npm package that will revolutionize your currency conversion tasks. Introducing Advance-Currency-Converter, created by yours truly, Ritika Mishra!
 
-The FreeCurrencyApi npm package allows you to easily interact with the FreeCurrencyApi service to convert currencies and retrieve exchange rates.
+This npm package comes packed with powerful features to simplify your currency-related operations:
+
+Built-in HTTP Requests: Utilizing axios, this package ensures seamless communication with currency API endpoints, making data retrieval a breeze.
+
+Robust Error Handling: Say goodbye to unexpected errors! We've implemented robust error handling mechanisms to ensure your applications run smoothly even in challenging scenarios.
+
+New Method: getExchangeRate: Need to fetch the exchange rate between two currencies? We've got you covered! Our latest update introduces a convenient method to retrieve exchange rates effortlessly.
+
+Improved Clarity: We've revamped the class name to FreeCurrencyApi for better clarity and ease of use. No more guessing games when integrating this package into your projects!
 
 Installation
-You can install the package via npm:
+To get started with advance-currency-converter today, simply install it via npm:
 
-npm install freecurrencyapi
+ ``` bash
+Copy code
+npm install advance-currency-converter
+```
+Then, head over to the README for comprehensive documentation on how to leverage the functionalities offered by this package.
+
 Usage
-To use the FreeCurrencyApi class in your code, follow these steps:
-
-## Import the required modules:
-
 ```
-import axios from 'axios';
-import { FreeCurrencyApi } from 'freecurrencyapi';
+const { FreeCurrencyApi } = require('advance-currency-converter');
 
-```
+const currencyConverter = new FreeCurrencyApi();
 
-Create an instance of the FreeCurrencyApi class with your API key:
-
-```
-const apiKey = 'YOUR_API_KEY_HERE'; 
-const currencyApi = new FreeCurrencyApi(apiKey);
-```
-Replace 'YOUR_API_KEY_HERE' with your actual API key. 
-
-Now you can use the convertCurrency and getExchangeRate methods to perform currency conversion and retrieve exchange rates:
-
-```
-// Convert currency
-const amount = 100;
-const fromCurrency = 'USD';
-const toCurrency = 'EUR';
-const result = await currencyApi.convertCurrency(fromCurrency, toCurrency, amount);
-console.log(`${amount} ${fromCurrency} equals ${result} ${toCurrency}`);
+// Example usage to get exchange rate between USD and EUR
+currencyConverter.getExchangeRate('USD', 'EUR')
+  .then(rate => {
+    console.log(`1 USD is equal to ${rate} EUR`);
+  })
+  .catch(error => {
+    console.error('Error fetching exchange rate:', error);
+  });
 ```
 
-// Get exchange rate
-const exchangeRate = await currencyApi.getExchangeRate(fromCurrency, toCurrency);
-console.log(`1 ${fromCurrency} equals ${exchangeRate} ${toCurrency}`);
-API
-FreeCurrencyApi(apiKey)
-apiKey (string): Your FreeCurrencyApi API key.
-convertCurrency(fromCurrency, toCurrency, amount)
-Converts an amount from one currency to another.
+Whether you're developing financial apps, e-commerce platforms, or any other project that involves currency conversion, advance-currency-converter is your go-to solution.
 
-fromCurrency (string): The currency to convert from (e.g., 'USD').
-toCurrency (string): The currency to convert to (e.g., 'EUR').
-amount (number): The amount to convert.
-Returns a Promise that resolves to the converted amount.
+Feel free to contribute, report issues, or suggest improvements on the GitHub repository. Your feedback is invaluable in making this package even better!
 
-getExchangeRate(fromCurrency, toCurrency)
-Retrieves the exchange rate between two currencies.
+Happy coding! 💻💡
 
-fromCurrency (string): The base currency (e.g., 'USD').
-toCurrency (string): The target currency (e.g., 'EUR').
-Returns a Promise that resolves to the exchange rate.
-
-Example
-
-```
- import axios from 'axios';
-import { FreeCurrencyApi } from 'freecurrencyapi';
-
-const apiKey = 'YOUR_API_KEY_HERE';
-const currencyApi = new FreeCurrencyApi(apiKey);
-
-const amount = 100;
-const fromCurrency = 'USD';
-const toCurrency = 'EUR';
-
-// Convert currency
-const result = await currencyApi.convertCurrency(fromCurrency, toCurrency, amount);
-console.log(`${amount} ${fromCurrency} equals ${result} ${toCurrency}`);
-
-// Get exchange rate
-const exchangeRate = await currencyApi.getExchangeRate(fromCurrency, toCurrency);
-console.log(`1 ${fromCurrency} equals ${exchangeRate} ${toCurrency}`);  
-```
-Note
-Make sure to replace 'YOUR_API_KEY_HERE' with your actual FreeCurrencyApi API key.
-
-By using this class, your API key is securely stored within your code.
-Author- Ritika Mishra
+Author: Ritika Mishra
